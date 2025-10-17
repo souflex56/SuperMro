@@ -28,7 +28,7 @@ DataProcessor (通用处理器 - 可实际使用)
 
 ![继承关系分析示例](eg.png)
 
-*上图展示了SuperMro分析示例项目生成的继承关系图：ImageProcessor（图像处理器）和TextProcessor（文本处理器）都是可以实际使用的类，它们都继承自DataProcessor（通用处理器）；DataProcessor继承自BaseProcessor（处理器模板）。图中每个类下方列出了该类的主要方法，帮助开发者快速了解每个类的用途。*
+*上图展示了SuperMro分析示例项目生成的继承关系图：ImageProcessor（图像处理器）和TextProcessor（文本处理器）都是可以实际使用的类，它们都继承自DataProcessor（通用处理器）；DataProcessor继承自BaseProcessor（处理器模板）。图中每个类下方列出了该类的主要公共方法，帮助开发者快速了解项目中的类的功能接口。*
 
 ## 🚀 快速开始
 

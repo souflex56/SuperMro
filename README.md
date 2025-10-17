@@ -16,7 +16,7 @@
 
 ![继承关系分析示例](examples/eg.png)
 
-*上图展示了SuperMro分析sample_project.processors模块生成的继承关系图，清晰展示了BaseProcessor抽象基类及其子类的继承层次结构。*
+*上图展示了SuperMro分析sample_project.processors模块生成的继承关系图。图中清晰展示了完整的继承层次：ImageProcessor和TextProcessor作为具体实现类，都继承自DataProcessor；DataProcessor继承自BaseProcessor抽象基类；BaseProcessor最终继承自Python的ABC（Abstract Base Class）。这种设计模式确保了所有处理器都遵循统一的接口规范，同时允许具体的子类实现各自特定的功能。*
 
 ## 🚀 快速开始
 

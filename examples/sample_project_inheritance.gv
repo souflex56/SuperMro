@@ -1,0 +1,51 @@
+// sample_project Class Hierarchy
+digraph {
+	graph [nodesep=0.3 rankdir=TB ranksep=0.5 splines=ortho]
+	subgraph cluster_0 {
+		label="sample_project.exceptions\nexceptions.py\n4 类"
+		style="filled,rounded"
+		color="#ffebee"
+		fontsize=12
+		fontname=Arial
+		CustomError [label="CustomError\n━━━━━━━━━━━━━━━━━━━━\n• add_note, with_traceback" fillcolor="#ffcdd2" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		DatabaseError [label="DatabaseError\n━━━━━━━━━━━━━━━━━━━━\n• add_note, with_traceback" fillcolor="#ffcdd2" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		ProcessingError [label="ProcessingError\n━━━━━━━━━━━━━━━━━━━━\n• add_note, with_traceback" fillcolor="#ffcdd2" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		ValidationError [label="ValidationError\n━━━━━━━━━━━━━━━━━━━━\n• add_note, with_traceback" fillcolor="#ffcdd2" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+	}
+	CustomError -> BaseModel [style=invis weight=100]
+	subgraph cluster_1 {
+		label="sample_project.models\nmodels.py\n4 类"
+		style="filled,rounded"
+		color="#e3f2fd"
+		fontsize=12
+		fontname=Arial
+		BaseModel [label="BaseModel\n━━━━━━━━━━━━━━━━━━━━\n• delete, save" fillcolor="#f5f5f5" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		Comment [label="Comment\n━━━━━━━━━━━━━━━━━━━━\n• delete, edit, reply_to... (+1)" fillcolor="#f5f5f5" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		Post [label="Post\n━━━━━━━━━━━━━━━━━━━━\n• add_comment, delete, get_summary... (+1)" fillcolor="#f5f5f5" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		User [label="User\n━━━━━━━━━━━━━━━━━━━━\n• change_password, delete, get_profile... (+1)" fillcolor="#f5f5f5" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+	}
+	BaseModel -> BaseProcessor [style=invis weight=100]
+	subgraph cluster_2 {
+		label="sample_project.processors\nprocessors.py\n4 类"
+		style="filled,rounded"
+		color="#e8f5e8"
+		fontsize=12
+		fontname=Arial
+		BaseProcessor [label="BaseProcessor\n━━━━━━━━━━━━━━━━━━━━\n• get_stats, process" fillcolor="#c8e6c9" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		DataProcessor [label="DataProcessor\n━━━━━━━━━━━━━━━━━━━━\n• get_stats, process, validate" fillcolor="#c8e6c9" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		ImageProcessor [label="ImageProcessor\n━━━━━━━━━━━━━━━━━━━━\n• compress, get_stats, process... (+2)" fillcolor="#c8e6c9" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+		TextProcessor [label="TextProcessor\n━━━━━━━━━━━━━━━━━━━━\n• extract_keywords, get_stats, process... (+1)" fillcolor="#c8e6c9" fontname=Arial fontsize=10 shape=ellipse style="filled,rounded"]
+	}
+	ValidationError -> CustomError [arrowhead=normal color=black]
+	Exception -> BaseException [arrowhead=normal color=black]
+	Comment -> BaseModel [arrowhead=normal color=black]
+	DataProcessor -> BaseProcessor [arrowhead=normal color=black]
+	Post -> BaseModel [arrowhead=normal color=black]
+	ProcessingError -> CustomError [arrowhead=normal color=black]
+	CustomError -> Exception [arrowhead=normal color=black]
+	User -> BaseModel [arrowhead=normal color=black]
+	ImageProcessor -> DataProcessor [arrowhead=normal color=black]
+	TextProcessor -> DataProcessor [arrowhead=normal color=black]
+	DatabaseError -> CustomError [arrowhead=normal color=black]
+	BaseProcessor -> ABC [arrowhead=normal color=black]
+}

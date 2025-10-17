@@ -67,11 +67,6 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Graphviz output files
-*.gv
-*.pdf
-*.png
-*.svg
 
 # Temporary files
 *.tmp

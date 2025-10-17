@@ -26,16 +26,7 @@ DataProcessor (通用处理器 - 可实际使用)
 └── TextProcessor (文本处理器 - 可实际使用)
 ```
 
-**生活例子理解：**
-- **模板类**：就像"汽车设计图纸"，告诉你汽车必须有什么功能，但你不能开图纸上路
-- **实际类**：就像"真正的汽车"，可以直接开上路使用
-- **继承关系**：就像"跑车"和"卡车"都继承自"汽车"的概念，都有轮子、发动机，但各有特色
-
-**为什么有些有ABC，有些没有？**
-- 有ABC的类 = 设计图纸（模板），用来规范其他类必须有什么功能
-- 没有ABC的类 = 实际工具，可以直接使用
-
-![继承关系分析示例](examples/eg.png)
+![继承关系分析示例](https://raw.githubusercontent.com/souflex56/SuperMro/main/examples/eg.png)
 
 *上图展示了SuperMro分析示例项目生成的继承关系图：ImageProcessor（图像处理器）和TextProcessor（文本处理器）都是可以实际使用的类，它们都继承自DataProcessor（通用处理器）；DataProcessor继承自BaseProcessor（处理器模板）。图中每个类下方列出了该类的主要功能方法，帮助开发者快速了解每个类的用途。*
 
